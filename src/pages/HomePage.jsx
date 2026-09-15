@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowRight, ChevronDown, Sparkles, Eye, Compass, Award } from 'lucide-react';
 import CocoaParticles from '../components/CocoaParticles';
 import { PRODUCTS, PROCESS_STEPS } from '../data/chococraftData';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function HomePage({ onNavigate, onSelectProduct, setIsHoveringProduct }) {
   const [activeStep, setActiveStep] = useState(0);
@@ -12,12 +13,12 @@ export default function HomePage({ onNavigate, onSelectProduct, setIsHoveringPro
       {/* 1. HERO SECTION */}
       <section className="hero-section">
         <img 
-          src="/assets/images/1.png" 
+          src={getAssetUrl("/assets/images/1.png")} 
           alt="CHOCOCRAFT Luxury Dark Chocolate Bar on Stone Surface" 
           className="hero-bg-image"
           onError={(e) => {
             e.target.onerror = null;
-            e.target.src = "/assets/images/hero.jpg";
+            e.target.src = getAssetUrl("/assets/images/hero.jpg");
           }}
         />
         <div className="hero-gradient-overlay" />
@@ -170,12 +171,12 @@ export default function HomePage({ onNavigate, onSelectProduct, setIsHoveringPro
             }}
           >
             <img 
-              src="/assets/images/7.png" 
+              src={getAssetUrl("/assets/images/7.png")} 
               alt="Artisan Chocolatier Tempering Liquid Dark Chocolate Ribbon" 
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               onError={(e) => {
                 e.target.onerror = null;
-                e.target.src = "/assets/images/liquid.jpg";
+                e.target.src = getAssetUrl("/assets/images/liquid.jpg");
               }}
             />
             <div 
@@ -284,7 +285,7 @@ export default function HomePage({ onNavigate, onSelectProduct, setIsHoveringPro
                       "/assets/images/truffles.jpg",
                       "/assets/images/1.png"
                     ];
-                    e.target.src = fallbacks[activeStep] || "/assets/images/cocoapod.jpg";
+                    e.target.src = getAssetUrl(fallbacks[activeStep] || "/assets/images/cocoapod.jpg");
                   }}
                 />
               </div>
@@ -305,12 +306,12 @@ export default function HomePage({ onNavigate, onSelectProduct, setIsHoveringPro
         }}
       >
         <img 
-          src="/assets/images/1.png" 
+          src={getAssetUrl("/assets/images/1.png")} 
           alt="CHOCOCRAFT Dark Chocolate Slab Macro" 
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.5)' }} 
           onError={(e) => {
             e.target.onerror = null;
-            e.target.src = "/assets/images/hero.jpg";
+            e.target.src = getAssetUrl("/assets/images/hero.jpg");
           }}
         />
         <div className="hero-gradient-overlay" />

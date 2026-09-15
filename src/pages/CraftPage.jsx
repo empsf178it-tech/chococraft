@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { CRAFT_SECTIONS } from '../data/chococraftData';
 import { ArrowRight, Flame, Thermometer, Sparkles, Sliders } from 'lucide-react';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function CraftPage({ onNavigate }) {
   const [temperTemp, setTemperTemp] = useState(31.5); // ideal Form V temp
@@ -19,7 +20,7 @@ export default function CraftPage({ onNavigate }) {
       {/* Hero Section */}
       <section style={{ position: 'relative', padding: '8rem 0 6rem', textContent: 'center', overflow: 'hidden' }}>
         <img 
-          src="/assets/images/7.png" 
+          src={getAssetUrl("/assets/images/7.png")} 
           alt="Molten Dark Chocolate Ribbon Pouring Continuous Tempering"
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.35)' }}
         />
@@ -223,7 +224,7 @@ export default function CraftPage({ onNavigate }) {
         }}
       >
         <img 
-          src="/assets/images/1.png" 
+          src={getAssetUrl("/assets/images/1.png")} 
           alt="Macro Chocolate Shards" 
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.3)' }}
         />

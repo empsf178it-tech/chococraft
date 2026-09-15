@@ -1,5 +1,6 @@
 import React from 'react';
 import { ShieldCheck, Sparkles, Compass, Heart, Award, ArrowRight } from 'lucide-react';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function AboutPage({ onNavigate }) {
   const values = [
@@ -30,7 +31,7 @@ export default function AboutPage({ onNavigate }) {
       {/* Hero Section */}
       <section style={{ position: 'relative', padding: '8rem 0 6rem', textAlign: 'center', overflow: 'hidden' }}>
         <img 
-          src="/assets/images/14.png" 
+          src={getAssetUrl("/assets/images/14.png")} 
           alt="Vintage Swiss Chocolate Atelier Workbench in Zürich" 
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.35)' }}
         />

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { TASTING_GUIDE, PRODUCTS } from '../data/chococraftData';
 import { Sparkles, Eye, Wind, Disc, Smile, Award, ArrowRight, Check } from 'lucide-react';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function TastingPage({ onSelectProduct, onNavigate }) {
   const [activeCategory, setActiveCategory] = useState(0);
@@ -27,7 +28,7 @@ export default function TastingPage({ onSelectProduct, onNavigate }) {
       {/* Hero Section */}
       <section style={{ position: 'relative', padding: '8rem 0 6rem', textAlign: 'center', overflow: 'hidden' }}>
         <img 
-          src="/assets/images/12.png" 
+          src={getAssetUrl("/assets/images/12.png")} 
           alt="Luxury Chocolate Tasting Room Setup - Aroma Evaluation" 
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.35)' }}
         />
@@ -145,7 +146,7 @@ export default function TastingPage({ onSelectProduct, onNavigate }) {
 
             <div style={{ height: '360px', borderRadius: '4px', overflow: 'hidden' }}>
               <img 
-                src={["/assets/images/12.png", "/assets/images/12.png", "/assets/images/13.png", "/assets/images/2.png", "/assets/images/15.png"][activeRitualStep] || "/assets/images/12.png"}
+                src={getAssetUrl(["/assets/images/12.png", "/assets/images/12.png", "/assets/images/13.png", "/assets/images/2.png", "/assets/images/15.png"][activeRitualStep] || "/assets/images/12.png")}
                 alt={TASTING_GUIDE.ritual[activeRitualStep].name}
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />

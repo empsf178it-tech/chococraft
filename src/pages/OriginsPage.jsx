@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ORIGINS } from '../data/chococraftData';
 import { MapPin, Globe, Compass, Sun, Mountain, Calendar, ArrowRight } from 'lucide-react';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function OriginsPage({ onNavigate }) {
   const [selectedOrigin, setSelectedOrigin] = useState(ORIGINS[0]);
@@ -10,7 +11,7 @@ export default function OriginsPage({ onNavigate }) {
       {/* Hero Section */}
       <section style={{ position: 'relative', padding: '8rem 0 6rem', textAlign: 'center', overflow: 'hidden' }}>
         <img 
-          src="/assets/images/9.png" 
+          src={getAssetUrl("/assets/images/9.png")} 
           alt="Fresh Cocoa Pods on Cacao Tree in Rainforest" 
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.4)' }}
         />
@@ -123,7 +124,7 @@ export default function OriginsPage({ onNavigate }) {
 
             <div style={{ height: '480px', borderRadius: '4px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.15)' }}>
               <img 
-                src="/assets/images/10.png" 
+                src={getAssetUrl("/assets/images/10.png")} 
                 alt="Ripe Cocoa Pod Harvesting in Ashanti Ghana" 
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />

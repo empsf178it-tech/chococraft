@@ -1,4 +1,6 @@
-export const PRODUCTS = [
+import { getAssetUrl } from '../utils/assetHelper';
+
+const rawPRODUCTS = [
   {
     id: "noir-72",
     name: "NOIR 72",
@@ -289,7 +291,7 @@ export const PRODUCTS = [
   }
 ];
 
-export const PROCESS_STEPS = [
+const rawPROCESS_STEPS = [
   {
     step: "01",
     title: "COCOA POD",
@@ -341,7 +343,7 @@ export const PROCESS_STEPS = [
   }
 ];
 
-export const ORIGINS = [
+const rawORIGINS = [
   {
     id: "ecuador",
     country: "ECUADOR",
@@ -380,7 +382,7 @@ export const ORIGINS = [
   }
 ];
 
-export const CRAFT_SECTIONS = [
+const rawCRAFT_SECTIONS = [
   {
     id: "roast",
     title: "ROAST WITH INTENTION.",
@@ -467,3 +469,9 @@ export const TASTING_GUIDE = {
     }
   ]
 };
+
+export const PRODUCTS = rawPRODUCTS.map(item => ({ ...item, image: getAssetUrl(item.image) }));
+export const PROCESS_STEPS = rawPROCESS_STEPS.map(item => ({ ...item, image: getAssetUrl(item.image) }));
+export const ORIGINS = rawORIGINS.map(item => ({ ...item, image: getAssetUrl(item.image) }));
+export const CRAFT_SECTIONS = rawCRAFT_SECTIONS.map(item => ({ ...item, image: getAssetUrl(item.image) }));
+
