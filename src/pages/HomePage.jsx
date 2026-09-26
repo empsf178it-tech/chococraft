@@ -124,7 +124,7 @@ export default function HomePage({ onNavigate, onSelectProduct, setIsHoveringPro
                     ))}
                   </div>
 
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '1rem', borderTop: '1px solid rgba(197, 160, 89, 0.15)' }}>
+                  <div className="product-footer">
                     <span style={{ fontSize: '0.75rem', color: '#c5a059', fontWeight: 600 }}>{product.cocoaPercent}% COCOA</span>
                     <span style={{ fontSize: '0.75rem', letterSpacing: '0.1em', color: '#fbf8f3', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                       EXPLORE <ArrowRight size={14} />

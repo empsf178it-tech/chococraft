@@ -93,7 +93,7 @@ export default function CollectionPage({ onSelectProduct, setIsHoveringProduct }
                     ))}
                   </div>
 
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '1rem', borderTop: '1px solid rgba(197, 160, 89, 0.15)' }}>
+                  <div className="product-footer">
                     <span style={{ fontSize: '0.75rem', color: '#6e5e54' }}>{product.weight}</span>
                     <span style={{ fontSize: '0.75rem', letterSpacing: '0.1em', color: '#c5a059', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                       EXPLORE DETAILS <ArrowRight size={14} />
@@ -128,7 +128,7 @@ export default function CollectionPage({ onSelectProduct, setIsHoveringProduct }
               <p style={{ fontSize: '0.9rem', color: '#c4b6a6', lineHeight: '1.7', marginBottom: '1.5rem' }}>
                 The deep cocoa tannins and earthy peat notes of 85% Ecuador cocoa melt in harmony with the smoky, oak finish of an 18-year Single Malt.
               </p>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#c5a059', fontSize: '0.8rem', fontWeight: 600 }}>
+              <div className="pairing-footer" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#c5a059', fontSize: '0.8rem', fontWeight: 600 }}>
                 ✦ RECOMMENDED SERVE: Neat in Glencairn Glass
               </div>
             </div>
@@ -143,7 +143,7 @@ export default function CollectionPage({ onSelectProduct, setIsHoveringProduct }
               <p style={{ fontSize: '0.9rem', color: '#c4b6a6', lineHeight: '1.7', marginBottom: '1.5rem' }}>
                 Madagascan natural red berry acidity mirrors the floral bergamot notes of light-roast washed Ethiopian espresso.
               </p>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#c5a059', fontSize: '0.8rem', fontWeight: 600 }}>
+              <div className="pairing-footer" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#c5a059', fontSize: '0.8rem', fontWeight: 600 }}>
                 ✦ RECOMMENDED SERVE: 90°C Pour-Over Drip
               </div>
             </div>
@@ -158,7 +158,7 @@ export default function CollectionPage({ onSelectProduct, setIsHoveringProduct }
               <p style={{ fontSize: '0.9rem', color: '#c4b6a6', lineHeight: '1.7', marginBottom: '1.5rem' }}>
                 Brittany sea salt and slow-roasted butter caramel find balance against the deep woodiness and velvety body of fermented black tea.
               </p>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#c5a059', fontSize: '0.8rem', fontWeight: 600 }}>
+              <div className="pairing-footer" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#c5a059', fontSize: '0.8rem', fontWeight: 600 }}>
                 ✦ RECOMMENDED SERVE: Gongfu Tea Infusion
               </div>
             </div>

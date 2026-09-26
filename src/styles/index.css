@@ -624,6 +624,9 @@ h1, h2, h3, h4, .font-serif {
   overflow: hidden;
   position: relative;
   transition: transform var(--transition-smooth), border-color var(--transition-fast), box-shadow var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .product-card:hover {
@@ -668,6 +671,18 @@ h1, h2, h3, h4, .font-serif {
 
 .product-body {
   padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(197, 160, 89, 0.15);
+  margin-top: auto;
 }
 
 .product-name {
@@ -880,40 +895,65 @@ h1, h2, h3, h4, .font-serif {
   transform: translateY(-2px);
 }
 
-/* Centered Cards Grid Layout (Keeps single/last cards centered with identical sizing) */
+/* Catalogue Grid — equal card heights with aligned footers */
 .catalogue-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
+  align-items: stretch;
 }
 
-.catalogue-grid .product-card {
-  flex: 1 1 310px;
-  max-width: 380px;
-  width: 100%;
+@media (max-width: 1024px) {
+  .catalogue-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .catalogue-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .centered-cards-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
+  align-items: stretch;
+}
+
+@media (max-width: 1024px) {
+  .centered-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .centered-cards-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .pairing-card {
-  flex: 1 1 300px;
-  max-width: 380px;
   background-color: var(--bg-dark);
   border: 1px solid var(--border-dark);
   padding: 2.5rem;
   border-radius: 6px;
   transition: transform var(--transition-fast), border-color var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .pairing-card:hover {
   border-color: var(--accent-gold);
   transform: translateY(-3px);
+}
+
+.pairing-footer {
+  margin-top: auto;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(197, 160, 89, 0.15);
 }
 
 .footer-col-title {
@@ -1091,5 +1131,185 @@ h1, h2, h3, h4, .font-serif {
 
   section {
     padding: 4.5rem 0 !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   TASTING PAGE — Mobile-Responsive Components
+═══════════════════════════════════════════════ */
+
+.ritual-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+}
+
+.ritual-tab-btn {
+  background-color: transparent;
+  color: #fbf8f3;
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  padding: 0.7rem 1.4rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  border-radius: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-family: var(--font-sans);
+}
+
+.ritual-tab-btn.active {
+  background-color: #c5a059;
+  color: #120a08;
+  border-color: #c5a059;
+}
+
+.ritual-card {
+  background-color: var(--bg-card-dark);
+  border: 1px solid var(--border-dark);
+  padding: 3.5rem;
+  border-radius: 6px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.ritual-card-nav {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.ritual-card-image {
+  height: 360px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.ritual-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sensory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.sensory-card {
+  background-color: var(--bg-card-dark);
+  border: 1px solid var(--border-dark);
+  padding: 2rem;
+  border-radius: 6px;
+}
+
+.palate-match-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  align-items: center;
+  background-color: var(--bg-cream);
+  padding: 1.5rem;
+  border-radius: 4px;
+}
+
+.palate-match-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.flavour-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .ritual-card {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .ritual-card-image {
+    height: 240px;
+    order: -1;
+  }
+
+  .palate-match-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .palate-match-img {
+    height: 200px;
+  }
+
+  .sensory-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .sensory-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ritual-tabs {
+    gap: 0.4rem;
+    margin-bottom: 2rem;
+  }
+
+  .ritual-tab-btn {
+    padding: 0.55rem 0.85rem;
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+  }
+
+  .ritual-card {
+    padding: 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .ritual-card-image {
+    height: 200px;
+  }
+
+  .ritual-card-nav {
+    gap: 0.5rem;
+  }
+
+  .ritual-card-nav .btn-secondary,
+  .ritual-card-nav .btn-primary {
+    flex: 1;
+    padding: 0.7rem 0.5rem;
+    font-size: 0.68rem;
+    justify-content: center;
+  }
+
+  .sensory-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .sensory-card {
+    padding: 1.1rem;
+  }
+
+  .flavour-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }

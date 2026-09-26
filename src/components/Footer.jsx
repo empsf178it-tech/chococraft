@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowUp, Send, Check } from 'lucide-react';
+import { ArrowUp, Send, Check, Sparkles } from 'lucide-react';
 
 export default function Footer({ onNavigate }) {
   const [email, setEmail] = useState('');
@@ -24,7 +24,13 @@ export default function Footer({ onNavigate }) {
         <div className="footer-top">
           {/* Brand Info Column */}
           <div>
-            <h2 className="footer-brand-title">CHOCOCRAFT</h2>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
+              <Sparkles size={24} color="#c5a059" />
+              <div>
+                <div className="footer-brand-title">CHOCOCRAFT</div>
+                <div style={{ fontSize: '0.65rem', letterSpacing: '0.2em', color: '#c5a059', fontWeight: 600 }}>PARIS · ZÜRICH</div>
+              </div>
+            </div>
             <p className="footer-tagline">CRAFTED FROM COCOA. CREATED FOR INDULGENCE.</p>
             <p style={{ fontSize: '0.85rem', color: '#c4b6a6', maxWidth: '360px', lineHeight: '1.7', marginBottom: '1.25rem' }}>
               An independent artisan chocolate house dedicated to single-origin cocoa purity, traditional stone grinding, and uncompromising luxury craftsmanship.
